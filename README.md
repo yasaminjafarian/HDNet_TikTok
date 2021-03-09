@@ -41,6 +41,17 @@ pip install -r requirements.txt
 ## Inference Demo
 
 #### Input:
+The test data dimension should be: 256x256. For any test data you should have 3 **.png** files: (For an example please take a look at the demo data in "test_data" folder.)
+- **name_img.png**  : The 256x256x3 test image 
+- **name_mask.png** : The 256x256 corresponding mask. You can use any off-the-shelf tools such as [removebg](https://www.remove.bg/) to remove the background and get the mask. 
+- **name_dp.png**   : The 256x256x3 corresponding [DensePose](http://densepose.org/). 
+
+#### Output:
+Running the demo will provide you with the following:
+- **name.txt**  : The 256x256 predicted depth
+- **name_mesh.obj** : The reconstructed mesh. You can use any off-the-shelf tools such as [MeshLab](https://www.meshlab.net/) to visualize the mesh.
+- **name_normal_1.txt, name_normal_2.txt, name_normal_3.txt**   : Three 256x256 predicted normal. If you concatenate them in the third axis it will give you the 256x256x3 normal map.
+- **name_results.png**  : visualization of predicted depth heatmap and the predicted normal map.
 
 
 
