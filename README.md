@@ -14,6 +14,20 @@ This codebase provides:
 - Visualization code      (Comming soon!)
 - Training code           (Comming soon!)
 
+## Requirements
+(This code is checked with tensorflow-gpu version 1.14.0, Python 3.7.4, CUDA 10 (version 10.0.130) and cuDNN 7 (version 7.4.2).)
+- numpy
+- imageio
+- matplotlib
+- scikit-image
+- scipy==1.1.0
+- tensorflow-gpu==1.14.0
+- gast==0.2.2
+- Pillow
+
+
+
+## Citation
 If you find the code useful in your research, please consider citing the paper.
 
 ```
