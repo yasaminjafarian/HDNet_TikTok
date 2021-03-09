@@ -52,9 +52,10 @@ The test data dimension should be: 256x256. For any test data you should have 3 
 Running the demo will provide you with the following:
 - **name.txt**  : The 256x256 predicted depth
 - **name_mesh.obj** : The reconstructed mesh. You can use any off-the-shelf tools such as [MeshLab](https://www.meshlab.net/) to visualize the mesh. Visualization for demo data:
-- ![Teaser Image](https://github.com/yasaminjafarian/HDNet_TikTok/blob/main/figures/mesh.png)
+- ![Teaser Image](https://github.com/yasaminjafarian/HDNet_TikTok/blob/main/figures/mesh2.png)
 - **name_normal_1.txt, name_normal_2.txt, name_normal_3.txt**   : Three 256x256 predicted normal. If you concatenate them in the third axis it will give you the 256x256x3 normal map.
 - **name_results.png**  : visualization of predicted depth heatmap and the predicted normal map.
+- - ![Teaser Image](https://github.com/yasaminjafarian/HDNet_TikTok/blob/main/figures/0043_results.png)
 
 #### Run the demo:
 Download the weights from [here](https://drive.google.com/file/d/1UOHkmwcWpwt9r11VzOCa_CVamwHVaobV/view?usp=sharing) and extract in the main repository or run this in the main repository:
