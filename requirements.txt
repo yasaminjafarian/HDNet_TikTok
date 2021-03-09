@@ -1,0 +1,8 @@
+numpy
+imageio
+matplotlib
+scikit-image
+scipy==1.1.0
+tensorflow-gpu==1.14.0
+gast==0.2.2
+Pillow
