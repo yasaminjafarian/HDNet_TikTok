@@ -6,5 +6,5 @@ This repository contains a pytorch implementation of "[Learning High Fidelity De
 
 [Project Page](https://www.yasamin.page/hdnet_tiktok)
 
-![Teaser Image](https://github.com/yasaminjafarian/HDNet_TikTok/tree/main/figures/TikTok1.gif)
+![Teaser Image](https://github.com/yasaminjafarian/HDNet_TikTok/blob/main/figures/TikTok1.gif)
 
