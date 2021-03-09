@@ -59,6 +59,12 @@ python HDNet_Inference.py
 ```
 From line 26 to 29 under "test path and outpath" you can choose the **input directory** (default: './test_data'), **ouput directory** (default: './test_data/infer_out') and if you want to save the **visualization** (default: True).
 
+## More Results:
+![Teaser Image](https://github.com/yasaminjafarian/HDNet_TikTok/blob/main/figures/TikTok2.gif)
+
+## MATLAB Visualization
+Comming Soon!
+
 ## Training
 Comming Soon!
 
