@@ -27,6 +27,7 @@ This codebase provides:
 - Pillow
 
 ## Installation
+
 Run the following code to install all pip packages:
 ```sh
 pip install -r requirements.txt 
@@ -55,6 +56,12 @@ Running the demo will provide you with the following:
 - **name_results.png**  : visualization of predicted depth heatmap and the predicted normal map.
 
 #### Run the demo:
+Download the weights from "[here](https://drive.google.com/file/d/1UOHkmwcWpwt9r11VzOCa_CVamwHVaobV/view?usp=sharing)" and extract in the main repository or follow this:
+```sh
+wget --load-cookies /tmp/cookies.txt "https://docs.google.com/uc?export=download&confirm=$(wget --quiet --save-cookies /tmp/cookies.txt --keep-session-cookies --no-check-certificate 'https://docs.google.com/uc?export=download&id=1UOHkmwcWpwt9r11VzOCa_CVamwHVaobV' -O- | sed -rn 's/.*confirm=([0-9A-Za-z_]+).*/\1\n/p')&id=1UOHkmwcWpwt9r11VzOCa_CVamwHVaobV" -O model.zip && rm -rf /tmp/cookies.txt
+
+unzip model.zip
+```
 Run the following python code:
 ```
 python HDNet_Inference.py
