@@ -4,9 +4,10 @@
 
 This repository contains a tensorflow implementation of "[Learning High Fidelity Depths of Dressed Humans by Watching Social Media Dance Videos](https://arxiv.org/abs/2103.03319)" in CVPR 2021 **(Oral Presentation)**.
 
-[**Project Page**](https://www.yasamin.page/hdnet_tiktok)
+| [**Project Page**](https://www.yasamin.page/hdnet_tiktok)  | 
+| ------------- | 
+| [**TikTok Dataset**](https://www.yasamin.page/hdnet_tiktok#h.jr9ifesshn7v) | 
 
-[**TikTok Dataset**](https://www.yasamin.page/hdnet_tiktok#h.jr9ifesshn7v)
 
 ![Teaser Image](https://github.com/yasaminjafarian/HDNet_TikTok/blob/main/figures/TikTok1.gif)
 
