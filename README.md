@@ -38,6 +38,11 @@ Then you can install the requirements:
 ```sh
 pip install -r requirements.txt 
 ```
+## Inference Demo
+
+#### Input:
+
+
 
 ## Citation
 If you find the code useful in your research, please consider citing the paper.
