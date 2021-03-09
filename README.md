@@ -7,11 +7,10 @@ This repository contains a tensorflow implementation of "[Learning High Fidelity
 [Project Page](https://www.yasamin.page/hdnet_tiktok)
 
 ![Teaser Image](https://github.com/yasaminjafarian/HDNet_TikTok/blob/main/figures/TikTok1.gif)
-![Teaser Image](https://github.com/yasaminjafarian/HDNet_TikTok/blob/main/figures/TikTok2.gif)
 
 This codebase provides: 
-- Inference code          (Comming soon!)
-- Visualization code      (Comming soon!)
+- Inference code          
+- Visualization code      
 - Training code           (Comming soon!)
 
 ## Requirements
@@ -53,7 +52,15 @@ Running the demo will provide you with the following:
 - **name_normal_1.txt, name_normal_2.txt, name_normal_3.txt**   : Three 256x256 predicted normal. If you concatenate them in the third axis it will give you the 256x256x3 normal map.
 - **name_results.png**  : visualization of predicted depth heatmap and the predicted normal map.
 
+#### Run the demo:
+Run the following python code:
+```
+python HDNet_Inference.py
+```
+From line 26 to 29 under "test path and outpath" you can choose the **input directory** (default: './test_data'), **ouput directory** (default: './test_data/infer_out') and if you want to save the **visualization** (default: True).
 
+## Training
+Comming Soon!
 
 ## Citation
 If you find the code useful in your research, please consider citing the paper.
