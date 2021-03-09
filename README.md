@@ -25,7 +25,19 @@ This codebase provides:
 - gast==0.2.2
 - Pillow
 
-
+## Installation
+Run the following code to install all pip packages:
+```sh
+pip install -r requirements.txt 
+```
+In case there is a problem, you can use the following tensorflow docker container "[(**tensorflow:19.02-py3**)](https://docs.nvidia.com/deeplearning/frameworks/tensorflow-release-notes/running.html)":
+```sh
+sudo docker run --gpus all -it --rm -v local_dir:container_dir nvcr.io/nvidia/tensorflow:19.02-py3
+```
+Then you can install the requirements:
+```sh
+pip install -r requirements.txt 
+```
 
 ## Citation
 If you find the code useful in your research, please consider citing the paper.
