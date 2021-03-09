@@ -45,11 +45,8 @@ pip install -r requirements.txt
 #### Input:
 The test data dimension should be: 256x256. For any test data you should have 3 **.png** files: (For an example please take a look at the demo data in "test_data" folder.)
 - **name_img.png**  : The 256x256x3 test image 
-- ![](<img src="https://github.com/yasaminjafarian/HDNet_TikTok/blob/main/test_data/0043_img.png" alt="alt text" width="100" height="100">)
 - **name_mask.png** : The 256x256 corresponding mask. You can use any off-the-shelf tools such as [removebg](https://www.remove.bg/) to remove the background and get the mask. 
-- ![](https://github.com/yasaminjafarian/HDNet_TikTok/blob/main/test_data/0043_mask.png)
 - **name_dp.png**   : The 256x256x3 corresponding [DensePose](http://densepose.org/). 
-- ![](https://github.com/yasaminjafarian/HDNet_TikTok/blob/main/test_data/0043_dp.png)
 
 #### Output:
 Running the demo will provide you with the following:
