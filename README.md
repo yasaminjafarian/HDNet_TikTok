@@ -7,7 +7,7 @@ This repository contains a tensorflow implementation of "[Learning High Fidelity
 [Project Page](https://www.yasamin.page/hdnet_tiktok)
 
 ![Teaser Image](https://github.com/yasaminjafarian/HDNet_TikTok/blob/main/figures/TikTok1.gif)
-
+![Teaser Image](https://github.com/yasaminjafarian/HDNet_TikTok/blob/main/figures/TikTok2.gif)
 
 This codebase provides: 
 - Inference code          (Comming soon!)
