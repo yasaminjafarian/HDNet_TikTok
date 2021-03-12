@@ -129,7 +129,8 @@ def get_test_data(inpath):
         if path.exists(inpath+'/'+dpname) and path.exists(inpath+'/'+mname):
             filename_list.append(name)          
     return filename_list
-# **********************************************************************************************************   
+# **********************************************************************************************************  
+# Function borrowed from https://github.com/sfu-gruvi-3dv/deep_human
 def depth2mesh(depth, mask, filename):
     h = depth.shape[0]
     w = depth.shape[1]
