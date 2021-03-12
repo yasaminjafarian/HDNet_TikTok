@@ -1,3 +1,4 @@
+# Borrowed from https://github.com/xuwenzhe/EECS442-Challenge-Surface-Normal-Estimation
 import numpy as np
 import tensorflow as tf
 
