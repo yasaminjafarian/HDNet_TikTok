@@ -81,7 +81,7 @@ Comming Soon!
 Comming Soon!
 
 ## Citation
-If you find the code useful in your research, please consider citing the paper.
+If you find the code or our dataset useful in your research, please consider citing the paper.
 
 ```
 @InProceedings{jafarian2021tiktok,
