@@ -105,5 +105,15 @@ You can visualize the progress of training convergence by running the code **plo
 python plot_convergence.py
 ```
 
+## Citation
+If you find the code or our dataset useful in your research, please consider citing the paper.
+
+```
+@InProceedings{jafarian2021tiktok,
+author={Yasamin Jafarian and Hyun Soo Park},
+title = {Learning High Fidelity Depths of Dressed Humans by Watching Social Media Dance Videos},
+booktitle = {The IEEE Conference on Computer Vision and Pattern Recognition (CVPR)},
+year = {2021}}
+```
 
 
