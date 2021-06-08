@@ -104,7 +104,6 @@ You can visualize the progress of training convergence by running the code **plo
 ```
 python plot_convergence.py
 ```
-![Teaser Image](https://github.com/yasaminjafarian/HDNet_TikTok/blob/main/figures/convergence.jpg)
 
 ## Citation
 If you find the code or our dataset useful in your research, please consider citing the paper.
