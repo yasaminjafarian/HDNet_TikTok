@@ -78,7 +78,7 @@ From line 26 to 29 under "test path and outpath" you can choose the **input dire
 Comming Soon!
 
 ## Training
-For the training of the network, go to **training folder** and read the [README file](https://github.com/yasaminjafarian/HDNet_TikTok/blob/3fea0ff8bcecfc5953d3263b87a267b7e0962a78/training/README.md)
+For the training of the network, go to [**training folder**](https://github.com/yasaminjafarian/HDNet_TikTok/tree/3fea0ff8bcecfc5953d3263b87a267b7e0962a78/training) and read the [**README file**](https://github.com/yasaminjafarian/HDNet_TikTok/blob/3fea0ff8bcecfc5953d3263b87a267b7e0962a78/training/README.md)
 
 ## Citation
 If you find the code or our dataset useful in your research, please consider citing the paper.
