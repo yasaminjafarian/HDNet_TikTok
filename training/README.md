@@ -69,7 +69,7 @@ This Estimator is pretraining the Network with ground truth data which is here T
 
 Every 100 steps the training results will be stored in "training_progress/visualization/NormalEstimator/Tang/"
 
-Every 1000 steps the checkpoints will be stored in "/training_progress/model/NormalEstimator/"
+Every 10000 steps the checkpoints will be stored in "/training_progress/model/NormalEstimator/"
 
 **2. Depth Estimator**
 
@@ -81,7 +81,7 @@ This Estimator is pretraining the Network with ground truth data which is here T
 
 very 100 steps the training results will be stored in "training_progress/visualization/DepthEstimator/Tang/"
 
-Every 1000 steps the checkpoints will be stored in "/training_progress/model/DepthEstimator/"
+Every 10000 steps the checkpoints will be stored in "/training_progress/model/DepthEstimator/"
 
 **3. HDNet**
 
@@ -97,7 +97,7 @@ very 100 steps the training results on Tang et al. data will be stored in "train
 
 very 100 steps the training results on TikTok data will be stored in "training_progress/visualization/HDNet/tiktok/"
 
-Every 1000 steps the checkpoints will be stored in "/training_progress/model/HDNet/"
+Every 10000 steps the checkpoints will be stored in "/training_progress/model/HDNet/"
 
 ## Visualize the Convergence Progress
 You can visualize the progress of training convergence by running the code **plot_convergence.py**
