@@ -14,7 +14,7 @@ This repository contains a tensorflow implementation of "[Learning High Fidelity
 This codebase provides: 
 - Inference code          
 - Visualization code      
-- Training code           (Comming soon!)
+- Training code           
 
 ## Requirements
 (This code is checked with tensorflow-gpu version 1.14.0, Python 3.7.4, CUDA 10 (version 10.0.130) and cuDNN 7 (version 7.4.2).)
@@ -73,9 +73,6 @@ From line 26 to 29 under "test path and outpath" you can choose the **input dire
 
 ## More Results
 ![Teaser Image](https://github.com/yasaminjafarian/HDNet_TikTok/blob/main/figures/TikTok2.gif)
-
-## MATLAB Visualization
-Comming Soon!
 
 ## Training
 For the training of the network, go to [**training folder**](https://github.com/yasaminjafarian/HDNet_TikTok/tree/3fea0ff8bcecfc5953d3263b87a267b7e0962a78/training) and read the [**README file**](https://github.com/yasaminjafarian/HDNet_TikTok/blob/3fea0ff8bcecfc5953d3263b87a267b7e0962a78/training/README.md)
