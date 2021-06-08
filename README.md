@@ -87,4 +87,3 @@ title = {Learning High Fidelity Depths of Dressed Humans by Watching Social Medi
 booktitle = {The IEEE Conference on Computer Vision and Pattern Recognition (CVPR)},
 year = {2021}}
 ```
-
