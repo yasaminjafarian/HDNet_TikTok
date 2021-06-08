@@ -35,7 +35,7 @@ pip install -r requirements.txt
 ## Download Training Data and Pretrained Modedls
 This project was trained on "[RenderPeople dataset](https://renderpeople.com/)". However, as this data is commercial, we cannot share it. Instead a sample of the public data from "[Tang et al. dataset](https://github.com/sfu-gruvi-3dv/deep_human)"  is given here for a training trial. Also a small sample of TikTok data is provided to train the semi-supervised framework. The complete TikTok dataset can be downloaded from "[here](https://www.yasamin.page/hdnet_tiktok#h.jr9ifesshn7v)". 
 
-1. Download and extract the training data from [here](https://drive.google.com/file/d/1uJ_yQ0XQwNhmHI_irsx8H4f6kQ-yhp5P/view?usp=sharing) in this folder or run this:
+1. Download and extract the sample training data from [here](https://drive.google.com/file/d/1uJ_yQ0XQwNhmHI_irsx8H4f6kQ-yhp5P/view?usp=sharing) in this folder or run this:
 ```sh
 wget --load-cookies /tmp/cookies.txt "https://docs.google.com/uc?export=download&confirm=$(wget --quiet --save-cookies /tmp/cookies.txt --keep-session-cookies --no-check-certificate 'https://docs.google.com/uc?export=download&id=1uJ_yQ0XQwNhmHI_irsx8H4f6kQ-yhp5P' -O- | sed -rn 's/.*confirm=([0-9A-Za-z_]+).*/\1\n/p')&id=1uJ_yQ0XQwNhmHI_irsx8H4f6kQ-yhp5P" -O training_data.zip && rm -rf /tmp/cookies.txt
 
