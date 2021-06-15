@@ -85,7 +85,7 @@ If you want to generate visualizations similar to those on the [website](https:/
 ```
 make_video.m
 ```
-From [lines 7 to 14](https://github.com/yasaminjafarian/HDNet_TikTok/blob/a17d18d49c7bf7b0c7cf3d0f4ecb32500b8848a5/MATLAB_Visualization/make_video.m#L7), you can choose the test folder (default: test_data) and the image name to process (default: 0043). This will generate a video of the prediction from different views (default: "test_data/infer_out/video/0043/video.avi")
+From [lines 7 to 14](https://github.com/yasaminjafarian/HDNet_TikTok/blob/main/MATLAB_Visualization/make_video.m#L7), you can choose the test folder (default: test_data) and the image name to process (default: 0043). This will generate a video of the prediction from different views (default: "test_data/infer_out/video/0043/video.avi")
 
 Note that this visualization will always generate a 672 × 512 video, You may want to resize your video accordingly for your own tested data.
 
