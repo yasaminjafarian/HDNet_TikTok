@@ -3,7 +3,7 @@
 [![report](https://img.shields.io/badge/arxiv-report-red)](https://arxiv.org/abs/2103.03319)
 [![PWC](https://img.shields.io/badge/PWC-report-blue)](https://paperswithcode.com/paper/learning-high-fidelity-depths-of-dressed)
 
-This repository contains a tensorflow implementation of "[Learning High Fidelity Depths of Dressed Humans by Watching Social Media Dance Videos](https://arxiv.org/abs/2103.03319)" in CVPR 2021 **(Oral Presentation) (Best Paper Nominated)**.
+This repository is the official tensorflow implementation of "[Learning High Fidelity Depths of Dressed Humans by Watching Social Media Dance Videos](https://arxiv.org/abs/2103.03319)" in CVPR 2021 **(Oral Presentation) (Best Paper Nominated)**.
 
 | [**Project Page**](https://www.yasamin.page/hdnet_tiktok)  | 
 | ------------- | 
@@ -14,11 +14,11 @@ This repository contains a tensorflow implementation of "[Learning High Fidelity
 
 This codebase provides: 
 - Inference code          
-- Visualization code      
 - Training code           
+- Visualization code      
 
 ## Requirements
-(This code is checked with tensorflow-gpu version 1.14.0, Python 3.7.4, CUDA 10 (version 10.0.130) and cuDNN 7 (version 7.4.2).)
+(This code is tested with tensorflow-gpu 1.14.0, Python 3.7.4, CUDA 10 (version 10.0.130) and cuDNN 7 (version 7.4.2).)
 - numpy
 - imageio
 - matplotlib
@@ -38,7 +38,7 @@ In case there is a problem, you can use the following tensorflow docker containe
 ```sh
 sudo docker run --gpus all -it --rm -v local_dir:container_dir nvcr.io/nvidia/tensorflow:19.02-py3
 ```
-Then you can install the requirements:
+Then install the requirements:
 ```sh
 pip install -r requirements.txt 
 ```
@@ -51,7 +51,7 @@ The test data dimension should be: 256x256. For any test data you should have 3 
 - **name_dp.png**   : The 256x256x3 corresponding [DensePose](http://densepose.org/). 
 
 #### Output:
-Running the demo will provide you with the following:
+Running the demo generates the following:
 - **name.txt**  : The 256x256 predicted depth
 - **name_mesh.obj** : The reconstructed mesh. You can use any off-the-shelf tools such as [MeshLab](https://www.meshlab.net/) to visualize the mesh. Visualization for demo data from different views:
 
@@ -79,6 +79,15 @@ From line 26 to 29 under "test path and outpath" you can choose the **input dire
 
 ## Training
 To train the network, go to [**training folder**](https://github.com/yasaminjafarian/HDNet_TikTok/tree/main/training) and read the [**README file**](https://github.com/yasaminjafarian/HDNet_TikTok/blob/main/training/README.md)
+
+## MATLAB Visualization
+If you want to generate visualizations similar to those on the [website](https://www.yasamin.page/hdnet_tiktok#h.8chqn9lk871f), go to [**MATLAB_Visualization folder**](https://github.com/yasaminjafarian/HDNet_TikTok/tree/main/MATLAB_Visualization) and run
+```
+make_video.m
+```
+From [lines 7 to 14](https://github.com/yasaminjafarian/HDNet_TikTok/blob/a17d18d49c7bf7b0c7cf3d0f4ecb32500b8848a5/MATLAB_Visualization/make_video.m#L7), you can choose the test folder (default: test_data) and the image name to process (default: 0043). This will generate a video of the prediction from different views (default: "test_data/infer_out/video/0043/video.avi")
+
+Note that this visualization will always generate a 672 × 512 video, You may want to resize your video accordingly for your own tested data.
 
 ## Citation
 If you find the code or our dataset useful in your research, please consider citing the paper.
