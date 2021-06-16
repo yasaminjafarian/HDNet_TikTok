@@ -93,9 +93,11 @@ Note that this visualization will always generate a 672 × 512 video, You may wa
 If you find the code or our dataset useful in your research, please consider citing the paper.
 
 ```
-@InProceedings{jafarian2021tiktok,
-author={Yasamin Jafarian and Hyun Soo Park},
-title = {Learning High Fidelity Depths of Dressed Humans by Watching Social Media Dance Videos},
-booktitle = {The IEEE Conference on Computer Vision and Pattern Recognition (CVPR)},
-year = {2021}}
+@InProceedings{Jafarian_2021_CVPR_TikTok,
+    author    = {Jafarian, Yasamin and Park, Hyun Soo},
+    title     = {Learning High Fidelity Depths of Dressed Humans by Watching Social Media Dance Videos},
+    booktitle = {Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR)},
+    month     = {June},
+    year      = {2021},
+    pages     = {12753-12762}} 
 ```
