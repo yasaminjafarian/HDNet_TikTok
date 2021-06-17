@@ -105,8 +105,83 @@ You can visualize the progress of training convergence by running the code **plo
 python plot_convergence.py
 ```
 
+## Training Data Structure
+1. The training data with ground truth: (e.g. Tang_data):
+```
+|-color              (Images)
+| |- 0000000.png
+| |- 0000001.png
+| |- 0000002.png
+| |- ...
+|-color_WO_bg        (Images with white background)
+| |- 0000000.png
+| |- 0000001.png
+| |- 0000002.png
+| |- ...
+|-densepose          (DensePose IUV maps)
+| |- 0000000.png
+| |- 0000001.png
+| |- 0000002.png
+| |- ...
+|-depth              (Ground truth depth values (256x256))
+| |- 0000000.txt
+| |- 0000001.txt
+| |- 0000002.txt
+| |- ...
+|-mask               (human segmentation)
+| |- 0000000.png
+| |- 0000001.png
+| |- 0000002.png
+| |- ...
+|-normal             (Ground truth normal)
+| |- 0000000_1.txt   (first channel)
+| |- 0000000_2.txt   (second channel)
+| |- 0000000_3.txt   (third channel)
+| |- ...
+```
+1. The training data without ground truth: (e.g. tiktok_data):
+```
+|-color              (Images)
+| |- 0017634.png
+| |- 0017635.png
+| |- 0017636.png
+| |- ...
+|-color_WO_bg        (Images with white background)
+| |- 0017634.png
+| |- 0017635.png
+| |- 0017636.png
+| |- ...
+|-densepose          (DensePose IUV maps)
+| |- 0017634.png
+| |- 0017635.png
+| |- 0017636.png
+| |- ...
+|-correspondences    (The correspondences between two frames) (see more explanation below)
+| |- corrs
+| | |- 0017634_0017637_i_limit.txt
+| | |- 0017634_0017637_i_r1_c1_r2_c2.txt
+| | |- 0017634_0017643_i_limit.txt
+| | |- 0017634_0017643_i_r1_c1_r2_c2.txt
+| | |- ...
+| |- corr_mat.txt
+|-mask               (human segmentation)
+| |- 0017634.png
+| |- 0017635.png
+| |- 0017636.png
+| |- ...
+|-pred_normals       (Predicted normals)
+| |- 0017634_1.txt   (first channel)
+| |- 0017634_2.txt   (second channel)
+| |- 0017634_3.txt   (third channel)
+| |- ...
+```
+You need to do some pre processing to use unlabeled data for training: 
+1. **"corr_mat.txt"** is a Nx5 matrix that in each row, the first value is the frame you want to use for self supervision (frame i) and the rest of 4 values are the frame numbres that the correspondences have been computed (frame j) and stored in **corrs** folder. (For each frame we chose 4 different frame to use for our self-supervised framework.)
+2. **0017634_0017637_i_r1_c1_r2_c2.txt** is an example of one of the correspondences files. Each row has 5 values representing one 2D correspondences between frame 0017634 and frame 0017637: (**1.** i(the body part number based on densepose) **2.** r1 (row number of the correspondence in frame 0017634) **3.** c1 (column number of the correspondence in frame 0017634) **4.** r2 (row number of the correspondence in frame 0017637) **5.** c2 (column number of the correspondence in frame 0017637) )
+3. **0017634_0017637_i_limit.txt** is a 24 by 3 matrix that the first column represents the 24 body part numbers from DensePose, second row and third row shows what range of rows in  **0017634_0017637_i_r1_c1_r2_c2.txt** represents that body part. if second row and third row is -1 means that the corresponding body part is not visible or doesn't have any correspondences. 
+
 ## Citation
-If you find the code or our dataset useful in your research, please consider citing the paper.
+If you find the code or our dataset useful in your research, please consider citing the paper. 
 
 ```
 @InProceedings{jafarian2021tiktok,
