@@ -85,7 +85,7 @@ Every 10000 steps the checkpoints will be stored in "/training_progress/model/De
 
 **3. HDNet**
 
-For this, you will just need to run the python code **training_NormalEstimator.py**. Note that if you would like, you can change the variables from [line 27 to 34](https://github.com/yasaminjafarian/HDNet_training_draft/blob/ea380ca1249cc5dbe8ded9a9fe6793ba98fd0086/training_code/training_HDNet.py#L27). Note that this can be trained with batch size 1 only.
+For this, you will just need to run the python code **training_HDNet.py**. Note that if you would like, you can change the variables from [line 27 to 34](https://github.com/yasaminjafarian/HDNet_training_draft/blob/ea380ca1249cc5dbe8ded9a9fe6793ba98fd0086/training_code/training_HDNet.py#L27). Note that this can be trained with batch size 1 only.
 ```
 python training_HDNet.py
 ```
