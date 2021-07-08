@@ -19,7 +19,6 @@ remove_images = true;
 pred_path = [path,'infer_out/'];
 
 %% making the video
-%% making the video
 tic
 color_names = {'gray','color'};
 
