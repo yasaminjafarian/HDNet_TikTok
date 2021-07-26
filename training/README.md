@@ -32,7 +32,7 @@ Then you can install the requirements:
 ```sh
 pip install -r requirements.txt 
 ```
-## Download Training Data and Pretrained Modedls
+## Download Training Data and Pretrained Models
 This project was trained on "[RenderPeople dataset](https://renderpeople.com/)". However, as this data is commercial, we cannot share it. Instead a sample of the public data from "[Tang et al. dataset](https://github.com/sfu-gruvi-3dv/deep_human)"  is given here for a training trial. Also a small sample of TikTok data is provided to train the semi-supervised framework. The complete TikTok dataset can be downloaded from "[here](https://www.yasamin.page/hdnet_tiktok#h.jr9ifesshn7v)". 
 
 1. Download and extract the sample training data from [here](https://drive.google.com/file/d/1uJ_yQ0XQwNhmHI_irsx8H4f6kQ-yhp5P/view?usp=sharing) in this folder or run this:
