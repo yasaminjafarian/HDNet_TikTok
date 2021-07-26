@@ -79,7 +79,7 @@ python training_DepthEstimator.py
 ```
 This Estimator is pretraining the Network with ground truth data which is here Tang et al. data.
 
-very 100 steps the training results will be stored in "training_progress/visualization/DepthEstimator/Tang/"
+Every 100 steps the training results will be stored in "training_progress/visualization/DepthEstimator/Tang/"
 
 Every 10000 steps the checkpoints will be stored in "/training_progress/model/DepthEstimator/"
 
@@ -93,9 +93,9 @@ HDNet is a semi-supervised framework that is trained on both labeled data (Tang 
 
 You can choose to let the network either use the pretrained models or not by commenting the [lines 128 and 129](https://github.com/yasaminjafarian/HDNet_training_draft/blob/ea380ca1249cc5dbe8ded9a9fe6793ba98fd0086/training_code/training_HDNet.py#L128)
 
-very 100 steps the training results on Tang et al. data will be stored in "training_progress/visualization/HDNet/Tang/"
+Every 100 steps the training results on Tang et al. data will be stored in "training_progress/visualization/HDNet/Tang/"
 
-very 100 steps the training results on TikTok data will be stored in "training_progress/visualization/HDNet/tiktok/"
+Every 100 steps the training results on TikTok data will be stored in "training_progress/visualization/HDNet/tiktok/"
 
 Every 10000 steps the checkpoints will be stored in "/training_progress/model/HDNet/"
 
