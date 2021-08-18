@@ -2,6 +2,7 @@
 
 [![report](https://img.shields.io/badge/arxiv-report-red)](https://arxiv.org/abs/2103.03319)
 [![PWC](https://img.shields.io/badge/PWC-report-blue)](https://paperswithcode.com/paper/learning-high-fidelity-depths-of-dressed)
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1gp0VUaKzF7u16XEIzam_4ZpMvrREK68F)
 
 This repository is the official tensorflow python implementation of "[Learning High Fidelity Depths of Dressed Humans by Watching Social Media Dance Videos](https://arxiv.org/abs/2103.03319)" in CVPR 2021 **(Oral Presentation) (Best Paper Honorable Mention)**.
 
@@ -42,6 +43,8 @@ Then install the requirements:
 ```sh
 pip install -r requirements.txt 
 ```
+The [google colab notebook](https://colab.research.google.com/drive/1gp0VUaKzF7u16XEIzam_4ZpMvrREK68F) is also available for the inference!
+
 ## Inference Demo
 
 #### Input:
@@ -73,6 +76,10 @@ Run the following python code:
 python HDNet_Inference.py
 ```
 From line 26 to 29 under "test path and outpath" you can choose the **input directory** (default: './test_data'), **ouput directory** (default: './test_data/infer_out') and if you want to save the **visualization** (default: True).
+
+## Inference Demo on Google Colab
+If you do not have a setup to run our code, we offer Google Colab version to give it a try, allowing you to run HDNet_TikTok in the cloud, free of charge. Try our Colab demo using the following notebook: 
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1gp0VUaKzF7u16XEIzam_4ZpMvrREK68F)
 
 ## More Results
 ![Teaser Image](https://github.com/yasaminjafarian/HDNet_TikTok/blob/main/figures/TikTok2.gif)
