@@ -65,12 +65,14 @@ Running the demo generates the following:
 ![Teaser Image](https://github.com/yasaminjafarian/HDNet_TikTok/blob/main/figures/0043_results.png)
 
 #### Run the demo:
-Download the weights from [here](https://drive.google.com/file/d/1UOHkmwcWpwt9r11VzOCa_CVamwHVaobV/view?usp=sharing) and extract in the main repository or run this in the main repository:
+Download the weights from [here](https://drive.google.com/file/d/1UOHkmwcWpwt9r11VzOCa_CVamwHVaobV/view?usp=sharing)  or [here](https://drive.google.com/file/d/15UoxKMiVnUWi-Gj9wAtOlV_wAVZlE3Yt/view?usp=sharing) and extract in the main repository or run this in the main repository:
 ```sh
 wget --load-cookies /tmp/cookies.txt "https://docs.google.com/uc?export=download&confirm=$(wget --quiet --save-cookies /tmp/cookies.txt --keep-session-cookies --no-check-certificate 'https://docs.google.com/uc?export=download&id=1UOHkmwcWpwt9r11VzOCa_CVamwHVaobV' -O- | sed -rn 's/.*confirm=([0-9A-Za-z_]+).*/\1\n/p')&id=1UOHkmwcWpwt9r11VzOCa_CVamwHVaobV" -O model.zip && rm -rf /tmp/cookies.txt
 
 unzip model.zip
 ```
+If the above links are not working, the weights can also be downloaded from the [Kaggle page](https://www.kaggle.com/yasaminjafarian/tiktokdataset).
+
 Run the following python code:
 ```
 python HDNet_Inference.py
