@@ -4,7 +4,7 @@
 [![PWC](https://img.shields.io/badge/PWC-report-blue)](https://paperswithcode.com/paper/learning-high-fidelity-depths-of-dressed)
 [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1gp0VUaKzF7u16XEIzam_4ZpMvrREK68F)
 
-This repository is the official tensorflow python implementation of "[Learning High Fidelity Depths of Dressed Humans by Watching Social Media Dance Videos](https://arxiv.org/abs/2103.03319)" in CVPR 2021 **(Oral Presentation) (Best Paper Honorable Mention)**.
+This repository is the official tensorflow python implementation of "[Learning High Fidelity Depths of Dressed Humans by Watching Social Media Dance Videos](https://openaccess.thecvf.com/content/CVPR2021/html/Jafarian_Learning_High_Fidelity_Depths_of_Dressed_Humans_by_Watching_Social_CVPR_2021_paper.html)" in CVPR 2021 **(Oral Presentation) (Best Paper Honorable Mention)**.
 
 | [**Project Page**](https://www.yasamin.page/hdnet_tiktok)  | 
 | ------------- | 
