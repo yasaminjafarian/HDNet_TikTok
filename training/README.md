@@ -189,6 +189,14 @@ author={Yasamin Jafarian and Hyun Soo Park},
 title = {Learning High Fidelity Depths of Dressed Humans by Watching Social Media Dance Videos},
 booktitle = {The IEEE Conference on Computer Vision and Pattern Recognition (CVPR)},
 year = {2021}}
+
+@misc{jafarian2021selfsupervised,
+      title={Self-supervised 3D Representation Learning of Dressed Humans from Social Media Videos}, 
+      author={Yasamin Jafarian and Hyun Soo Park},
+      year={2021},
+      eprint={2103.03319},
+      archivePrefix={arXiv},
+      primaryClass={cs.CV}}
 ```
 
 
