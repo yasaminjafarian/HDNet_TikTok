@@ -125,3 +125,6 @@ def calc_loss_d_refined_mask(output, y, z_refined):
 
     cost = tf.reduce_mean(tf.truediv(a1, numOfPix) - (0.5 * tf.truediv(a2, tf.square(numOfPix))))
     return cost
+
+
+#여기에 뭔가를 추가!
