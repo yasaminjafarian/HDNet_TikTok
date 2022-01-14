@@ -129,3 +129,5 @@ def calc_loss_d_refined_mask(output, y, z_refined):
 
 #여기에 뭔가를 추가!
 #dho dksehowl
+
+#최종 수정
