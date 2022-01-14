@@ -250,11 +250,11 @@ def read_correspondences_dp(f,fi,corr_path):
     i_limitn = i_limitn.astype('int')
     return i_r1_c1_r2_c2n_f,i_limitn
 
-def get_tiktok_patch(tk_path, Bsize, IMAGE_HEIGHT,IMAGE_WIDTH):
-    corr_mat = np.genfromtxt(tk_path +'/correspondences/corr_mat.txt',delimiter=",")
-    corr_path = tk_path +'/correspondences/'
-    num_of_neighbors = np.shape(corr_mat)[1]-1
-    image_nums = corr_mat[:,0].tolist()
+def get_tiktok_patch(tk_path, Bsize, IMAGE_HEIGHT,IMAGE_WIDTH):#titok data를 사용하려고 한다.
+    corr_mat = np.genfromtxt(tk_path +'/correspondences/corr_mat.txt',delimiter=",")#79x5 matrix, np.genfromtxt(,delimiter=",")을 사용하여 "," 구분이 열이고, enter가 행으로 matrix를 받아온다.
+    corr_path = tk_path +'/correspondences/'#
+    num_of_neighbors = np.shape(corr_mat)[1]-1#일단 열이 5이기에 5-1=4
+    image_nums = corr_mat[:,0].tolist()#list로 바꿔주는 함수인 tolist() 덕분에 일단 첫번째 
     num_of_ims = len(image_nums)
     frms_nums = np.random.choice(num_of_ims, Bsize).tolist()
     frms= []
@@ -285,25 +285,25 @@ def get_tiktok_patch(tk_path, Bsize, IMAGE_HEIGHT,IMAGE_WIDTH):
     return X_1, X1, N1, Z1, DP1, Z1_3, X_2, X2, N2, Z2, DP2, Z2_3, i_r1_c1_r2_c2, i_limit, frms, frms_neighbor
     
 ## **************************************Get Camera**********************************************
-def get_origin_scaling(bbs, IMAGE_HEIGHT):
-    Bsz = np.shape(bbs)[0]
-    batch_origin = []
-    batch_scaling = []
+def get_origin_scaling(bbs, IMAGE_HEIGHT):#bbs는 Bsizex4x2인 float형 0으로 이루어진 matrix이다. 그리고 IMAGE_HEIGHT를 입력으로 받는다.
+    Bsz = np.shape(bbs)[0]#일단 첫번째 축의 크기를 Bsz에 저장하는데 그냥 batchsize다.
+    batch_origin = []#빈 array를 선언한다.
+    batch_scaling = []#빈 array를 선언한다.
     
     for i in range(Bsz):
-        bb1_t = bbs[i,...] - 1
-        bbc1_t = bb1_t[2:4,0:3]
+        bb1_t = bbs[i,...] - 1#i번째 batch의 값을 저장한다. 4x2이다. 그리고 모든 요소에서 1을 뺀다.
+        bbc1_t = bb1_t[2:4,0:3]#2x2이다. 4개의 행 중에 밑에 행 2개를 bbc1_t에 따로 저장한다.
         
-        origin = np.multiply([bb1_t[1,0]-bbc1_t[1,0],bb1_t[0,0]-bbc1_t[0,0]],2)
+        origin = np.multiply([bb1_t[1,0]-bbc1_t[1,0],bb1_t[0,0]-bbc1_t[0,0]],2)#[2*(bb1_t[1,0]-bbc1_t[1,0]),2*(bb1_t[0,0]-bbc1_t[0,0])]
 
-        squareSize = np.maximum(bb1_t[0,1]-bb1_t[0,0]+1,bb1_t[1,1]-bb1_t[1,0]+1);
-        scaling = [np.multiply(np.true_divide(squareSize,IMAGE_HEIGHT),2)]
+        squareSize = np.maximum(bb1_t[0,1]-bb1_t[0,0]+1,bb1_t[1,1]-bb1_t[1,0]+1);#가장 큰 값을 정사각형의 한 변으로 한다.
+        scaling = [np.multiply(np.true_divide(squareSize,IMAGE_HEIGHT),2)]#(squareSize/IMAGE_HEIGHT)*2
     
-        batch_origin.append(origin)
-        batch_scaling.append(scaling)
+        batch_origin.append(origin)#append() 때문에 계속 [x, y]를 batch_origin에 넣어서 [[x,y],[],[],[]..]가 된다.
+        batch_scaling.append(scaling)#[[],[],[],[],[]...]이것도 append 때문에 계속 list에 [scaling]을 넣는다.
     
-    batch_origin = np.array(batch_origin,dtype='f')
-    batch_scaling = np.array(batch_scaling,dtype='f')
+    batch_origin = np.array(batch_origin,dtype='f')#각각을 다시 float형 array로 만들어서 저장한다.
+    batch_scaling = np.array(batch_scaling,dtype='f')#
     
     O = np.zeros((Bsz,1,2),dtype='f')
     O = batch_origin
@@ -313,20 +313,24 @@ def get_origin_scaling(bbs, IMAGE_HEIGHT):
     
     return O, S
 
-def get_camera(Bsize,IMAGE_HEIGHT):
-    C1n = np.zeros((3,4),dtype='f')
-    C1n[0,0]=1
+def get_camera(Bsize,IMAGE_HEIGHT):#일단 IMAGE_HEIGHT와 batch size를 input으로 한다. batch size는 주로 1 또는 8이다.
+    C1n = np.zeros((3,4),dtype='f')#data type float로 3x4인 0으로 이루어진 행렬을 만든다.
+    C1n[0,0]=1#그리고 각 행렬의 (0,0),(1,1),(2,2)에 1을 넣는다.
     C1n[1,1]=1
     C1n[2,2]=1
-    
-    R1n = np.zeros((3,3),dtype='f')
-    R1n[0,0]=1
+    #       1 0 0 0
+    # C1n = 0 1 0 0
+    #       0 0 1 0
+    R1n = np.zeros((3,3),dtype='f')#data type float로 3x3인 0으로 이루어진 행렬을 만든다.
+    R1n[0,0]=1#그리고 각 행렬의 (0,0),(1,1),(2,2)에 1을 넣는다.
     R1n[1,1]=1
     R1n[2,2]=1
     
     Rt1n = R1n
-    
-    K1n = np.zeros((3,3),dtype='f')
+    #       1 0 0
+    # R1n = 0 1 0
+    #       0 0 1
+    K1n = np.zeros((3,3),dtype='f')#data type float로 3x3인 0으로 이루어진 행렬을 만든다.K1n은 camera intrinsic parameter이다.
     
     K1n[0,0]=1111.6
     K1n[1,1]=1111.6
@@ -334,24 +338,22 @@ def get_camera(Bsize,IMAGE_HEIGHT):
     K1n[0,2]=960
     K1n[1,2]=540
     K1n[2,2]=1
-    
-    M1n = np.matmul(np.matmul(K1n,R1n),C1n)
+    #       1111.6      0 960
+    # R1n =      0 1111.6 540
+    #            0      0   1
+    M1n = np.matmul(np.matmul(K1n,R1n),C1n)#3x4 행렬인데, 마지막 column이 0이고, 앞의 3 column은 K1n과 같다.
 
-    Ki1n = np.linalg.inv(K1n)
+    Ki1n = np.linalg.inv(K1n)#K1n matrix를 inverse 시킨 matrix인데, 우리가 3D point reconstruction할 때는 inverse가 필요하기에 inverse한것을 Ki1n에 저장하는 것 같다.
     
-    cen1n = np.zeros((3),dtype='f')
+    cen1n = np.zeros((3),dtype='f')#1x3의 모든 요소가 float형 0으로 이루어진 matrix
     
-    bbs1n_tmp = np.array([[25,477],[420,872],[1,453],[1,453]],dtype='f')
-    bbs1n_tmp = np.reshape(bbs1n_tmp,[1,4,2])
+    bbs1n_tmp = np.array([[25,477],[420,872],[1,453],[1,453]],dtype='f')#float형이고, 4x2인 matrix이다.흠..이건 bounding box인가?
+    bbs1n_tmp = np.reshape(bbs1n_tmp,[1,4,2])#reshape으로 앞에 한 axis를 추가하여 1x4x2이다.
     
-    bbs1n = np.zeros((Bsize,4,2),dtype='f')
-    for b in range(Bsize):
+    bbs1n = np.zeros((Bsize,4,2),dtype='f')# Bsizex4x2인 float형 0으로 이루어진 matrix이다.
+    for b in range(Bsize):#Bsizex4x2인데 각 batch마다 bbs1n_tmp를 모두 저장한다.
         bbs1n[b,...]=bbs1n_tmp[0,...]
            
     origin1n, scaling1n = get_origin_scaling(bbs1n, IMAGE_HEIGHT)
     
     return origin1n, scaling1n, C1n, cen1n, K1n, Ki1n, M1n, R1n, Rt1n
-
-
-    
-    
