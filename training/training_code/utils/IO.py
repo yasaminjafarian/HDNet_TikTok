@@ -1,6 +1,6 @@
-import tensorflow as tf
-import numpy as np
-import skimage.data
+import tensorflow as tf #텐서플로우 라이브러리
+import numpy as np      #numpy 라이브러리
+import skimage.data     #이미지처리에 특화된 Python 이미지 라이브러리, Numpy배열로 동작해서 이미지 객체를 처리함/
 from PIL import Image, ImageDraw, ImageFont
 import math
 from tensorflow.python.platform import gfile
@@ -11,34 +11,34 @@ import os
 os.environ['TF_CPP_MIN_LOG_LEVEL'] = '3' 
 
 ## ******************************Write prediction************************************
-#fixed it~
-def write_matrix_txt(a,filename):
-    mat = np.matrix(a)
-    with open(filename,'wb') as f:
-        for line in mat:
-            np.savetxt(f, line, fmt='%.5f')
+
+def write_matrix_txt(a,filename):   #입력된 배열과 파일 이름을 가지고 행렬로 바꾼 뒤 txt파일로 저장해줌. test_data -> infer.out의 txt파일들이 이를 이용해 만들어진다.
+    mat = np.matrix(a)  #a 입력으로 list입력들어오면 배열로 바꿔줌. a=[[0, 1, 2], [3, 4, 5]] 꼴 가능. 2x3 array
+    with open(filename,'wb') as f:  #b는 파일을 binary mode로 연다. w는 쓰기모드 //with open(파일 경로, 모드) as 파일 객체: with as구문을 빠져나가게 되면 자동으로 close()함수 호출해 파일 닫음.
+        for line in mat:            #mat의 element개수만큼 반복, line이 변수. 확실하지 않음.
+            np.savetxt(f, line, fmt='%.5f')     #텍스트파일로 저장, f: 파일이름이나 파일handle, line: txt로 저장될 데이터. fmt:포맷.소수점 아래 5자리까지 표시.
             
-def write_prediction(Vis_dir,prediction,i,idx,Z_r1):
-    image_tensor  = np.asarray(prediction)   
+def write_prediction(Vis_dir,prediction,i,idx,Z_r1):    #예측을 작성?
+    image_tensor  = np.asarray(prediction)      #이미지 텐서. prediction으로 뭐가 들어오는지 파악 못함. asarray는 입력을 array로 바꿔주는 array와 동일 기능. but 데이터타입 옵션을 주면 동일한 데이터타입이어야 카피가 됨.
     num = 0  
-    image = image_tensor[num,...,0]
-    mask = Z_r1[num,...,0]>0
-    write_matrix_txt(image,Vis_dir+"STEP%07d_frame%07d_DEPTH.txt" % (i,idx[0]))
+    image = image_tensor[num,...,0] #이미지 = (0...0) 배열
+    mask = Z_r1[num,...,0]>0        #
+    write_matrix_txt(image,Vis_dir+"STEP%07d_frame%07d_DEPTH.txt" % (i,idx[0]))     #Vis_dir = test_data->infer_out폴더 (?), 이미지 배열을 
     
 def write_prediction_normal(Vis_dir,prediction,i,idx,Z_r1):
-    image_tensor  = np.asarray(prediction)  
-    image = image_tensor[0,...]
-    image_mag = np.expand_dims(np.sqrt(np.square(image).sum(axis=2)),-1)
-    image_unit = np.divide(image,image_mag)
-    write_matrix_txt(image_unit[...,0],Vis_dir+"STEP%07d_frame%07d_NORMAL_1.txt" % (i,idx[0]))
-    write_matrix_txt(image_unit[...,1],Vis_dir+"STEP%07d_frame%07d_NORMAL_2.txt" % (i,idx[0]))
+    image_tensor  = np.asarray(prediction)  #prediction 이라는 내용의 배열 생성
+    image = image_tensor[0,...] #이미지 = 이미지 텐서(배열)
+    image_mag = np.expand_dims(np.sqrt(np.square(image).sum(axis=2)),-1)    #이미지_mag = root(이미지 각 배열요소 제곱하고 z축에 대해 합함.) y축에 대해 dimension 추가 -1, 1 동일 의미
+    image_unit = np.divide(image,image_mag) #divide는 요소별 나눗셈 실행
+    write_matrix_txt(image_unit[...,0],Vis_dir+"STEP%07d_frame%07d_NORMAL_1.txt" % (i,idx[0]))  #infer_out 폴더 안에 STEP 폴더? 없지 않나 %07d = 0을 7개 채우고 i, idx[0]을 오른쪽부터 채워넣음
+    write_matrix_txt(image_unit[...,1],Vis_dir+"STEP%07d_frame%07d_NORMAL_2.txt" % (i,idx[0]))  #
     write_matrix_txt(image_unit[...,2],Vis_dir+"STEP%07d_frame%07d_NORMAL_3.txt" % (i,idx[0]))
 
 # **********************************************************************************************************
-def nmap_normalization(nmap_batch):
-    image_mag = np.expand_dims(np.sqrt(np.square(nmap_batch).sum(axis=2)),-1)
+def nmap_normalization(nmap_batch): #nmap normalization
+    image_mag = np.expand_dims(np.sqrt(np.square(nmap_batch).sum(axis=2)),-1)   #
     image_unit = np.divide(nmap_batch,image_mag)
-    return image_unit
+    return image_unit  #이게 되나?
 
 def get_concat_h(im1, im2):
     dst = Image.new('RGB', (im1.width + im2.width, im1.height))
