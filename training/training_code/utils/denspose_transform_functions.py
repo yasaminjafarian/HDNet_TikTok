@@ -241,3 +241,4 @@ def compute_dp_tr_3d_2d_loss2(d_i,d_j,i_r1_c1_r2_c2,i_limit,C,R,Rt,cen,K,Ki,orig
     return loss3d, loss2d,PC2p, PC1_2
 
 # *****************************************************************************************************
+

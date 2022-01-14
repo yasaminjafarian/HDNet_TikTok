@@ -46,7 +46,7 @@ def calc_loss_normal(output, y_normal,z_refined):   #Normal에 대한 loss를 �
     output_mag = tf.expand_dims(tf.sqrt(tf.reduce_sum(tf.square(output_no0),3)),-1) #위의 행렬 요소 제곱 -> 3이라는 축(4번째로 큰 축=1차원)으로 더해줌 최소 4차원-> 모든 요소에 root. -1은 가장 안쪽 차원 추가(가장 작은 차원)
     output_unit = tf.divide(output_no0,output_mag)  #요소별 나눗셈 진행 ==> 말 그대로 normalize
 
-    z_mask = z_refined[...,0]
+    z_mask = z_refined[...,0]   #
     a11 = tf.boolean_mask(tf.reduce_sum(tf.square(output_unit),3),z_mask)
     a22 = tf.boolean_mask(tf.reduce_sum(tf.square(y_normal),3),z_mask)
     a12 = tf.boolean_mask(tf.reduce_sum(tf.multiply(output_unit,y_normal),3),z_mask)
@@ -128,3 +128,6 @@ def calc_loss_d_refined_mask(output, y, z_refined):
 
 
 #여기에 뭔가를 추가!
+#dho dksehowl
+
+#최종 수정
