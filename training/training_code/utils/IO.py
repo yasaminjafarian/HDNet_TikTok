@@ -11,7 +11,7 @@ import os
 os.environ['TF_CPP_MIN_LOG_LEVEL'] = '3' 
 
 ## ******************************Write prediction************************************
-
+#fixed it~
 def write_matrix_txt(a,filename):
     mat = np.matrix(a)
     with open(filename,'wb') as f:
