@@ -110,11 +110,12 @@ If you find the code or our dataset useful in your research, please consider cit
     year      = {2021},
     pages     = {12753-12762}} 
     
-@misc{jafarian2021selfsupervised,
-      title={Self-supervised 3D Representation Learning of Dressed Humans from Social Media Videos}, 
-      author={Yasamin Jafarian and Hyun Soo Park},
-      year={2021},
-      eprint={2103.03319},
-      archivePrefix={arXiv},
-      primaryClass={cs.CV}}
+@ARTICLE{Jafarian_Self-supervised_3D_Representation,
+    title={Self-supervised 3D Representation Learning of Dressed Humans from Social Media Videos}, 
+    author={Y. Jafarian and H. Park},
+    journal = {IEEE Transactions on Pattern Analysis &amp; Machine Intelligence},
+    year={2022},
+    doi = {10.1109/TPAMI.2022.3231558},
+    publisher = {IEEE Computer Society}, 
+    address = {Los Alamitos, CA, USA}}
 ```
